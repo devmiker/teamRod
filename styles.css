@@ -1,0 +1,242 @@
+:root {
+  font-size: 16px;
+  font-family: "Audiowide", sans-serif;
+  --backgroundColor: #5cdb95;
+  --primaryTextColor: #05386b;
+  --secondaryTextColor: #edf5e1;
+  --shaded: #379683;
+  --unshaded: #8ee4af;
+}
+
+.body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--backgroundColor);
+  color: var(--primaryTextColor);
+}
+
+.body::-webkit-scrollbar {
+  width: 0.35rem;
+}
+
+.body::-webkit-scrollbar-track {
+  background: var(--shaded);
+}
+
+.body::-webkit-scrollbar-thumb {
+  background: var(--primaryTextColor);
+}
+
+.main {
+  margin-left: 5rem;
+  padding: 1rem 0;
+}
+
+/* NavBar */
+.navbar {
+  position: fixed;
+  background-color: var(--primaryTextColor);
+  color: var(--backgroundColor);
+  transition: 200ms ease;
+  z-index: 1;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.nav-item:last-child {
+  margin-top: auto;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: var(--backgroundColor);
+  text-decoration: none;
+  transition: 200ms ease;
+}
+
+.nav-link:hover {
+  filter: opacity(1);
+  background: var(--unshaded);
+  color: var(--primaryTextColor);
+}
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+}
+
+.nav-link i {
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+.logo {
+  color: var(--backgroundColor);
+  background: var(--primaryTextColor);
+  width: 100%;
+}
+
+.logo i {
+  transform: rotate(0deg);
+  transition: 200ms ease;
+}
+
+.logo-text {
+  display: inline;
+  position: absolute;
+  left: -999px;
+  transition: 200ms ease;
+}
+
+.navbar:hover .logo i {
+  transform: rotate(-180deg);
+}
+
+/*Small Screens*/
+@media only screen and (max-width: 700px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .logo {
+    display: logo;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  .main {
+    margin: 0;
+  }
+
+  .team-list {
+    margin: 0 1rem;
+  }
+}
+/* Large Screens*/
+@media only screen and (min-width: 700px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+
+  .navbar:hover {
+    width: 16rem;
+  }
+
+  .navbar:hover .link-text {
+    display: inline;
+  }
+
+  .navbar:hover .logo i {
+    margin-left: 11rem;
+  }
+
+  .navbar:hover .logo-text {
+    left: 0px;
+  }
+
+  .team-list {
+    margin: 0 1rem 0 3rem;
+  }
+}
+
+/* Titles */
+.title {
+  color: var(--secondaryTextColor);
+  text-align: center;
+  font-size: 3rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  padding: 2rem 0;
+}
+
+.section-title {
+  margin: 0;
+  text-align: center;
+}
+
+/* About Us */
+.about {
+  background-color: var(--primaryTextColor);
+  color: var(--backgroundColor);
+  margin: 0;
+  padding: 1vh 3rem;
+}
+
+.about p {
+  margin: 0;
+}
+
+.spacer {
+  aspect-ratio: 960/300;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: -2vh;
+}
+
+.layer {
+  background-image: url("images/layered-waves-haikei_2.svg");
+}
+
+.layer-flip {
+  background-image: url("images/layered-waves-haikei.svg");
+}
+
+/* Team */
+.team {
+  background-color: var(--backgroundColor);
+  color: var(--secondaryTextColor);
+  padding: 5vh 5vw;
+}
+.teamRow {
+  display: flex;
+}
+
+.teamColumn {
+  flex: 25%;
+  padding: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  .teamColumn {
+    width: 100%;
+  }
+}
+
+/* Services */
+.services {
+  display: flex;
+}
+
+.service {
+  flex: 20%;
+  padding: 0.05 em;
+}
